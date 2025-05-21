@@ -9,6 +9,7 @@ import {
 } from '@nestjs/common';
 import { TaskService } from './task.service';
 import { Task } from './task.entity'; // Adjust the path if needed
+import { CreateTaskDto } from './dto/create-task.dto'; // Adjust the path if needed
 
 @Controller('tasks')
 export class TasksController {
@@ -28,7 +29,7 @@ export class TasksController {
 
   // Create a new task
   @Post()
-  createTask(@Body() body: Partial<Task>) {
+  createTask(@Body() body: CreateTaskDto) {
     return this.taskService.createTask(body);
   }
 
