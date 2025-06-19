@@ -1,0 +1,57 @@
+
+🔍 Get 1 hotel
+
+query {
+  getHotel(id: 1) {
+    id
+    name
+    address
+    phone
+  }
+}
+
+📋 Get all hotels
+
+query {
+  getAllHotels {
+    id
+    name
+    address
+    phone
+  }
+}
+
+➕ Create new hotel
+
+mutation {
+  createHotel(input: {
+    name: "Royal Hotel",
+    address: "Phnom Penh",
+    phone: "012345678"
+  }) {
+    id
+    name
+  }
+}
+
+✏️ Update existing hotel
+
+mutation {
+  updateHotel(input: {
+    id: 1,
+    name: "Updated Hotel",
+    address: "New Address",
+    phone: "098765432"
+  }) {
+    id
+    name
+    address
+    phone
+  }
+}
+
+❌ Delete existing hotel
+
+mutation {
+  deleteHotel(id: 1)
+}

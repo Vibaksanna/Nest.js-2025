@@ -1,0 +1,52 @@
+➕ Book a hotel
+
+mutation {
+  bookHotel(
+    start_date: "2024-06-20T10:00:00.000Z",
+    end_date: "2024-06-22T10:00:00.000Z",
+    hotel_id: 1,
+    price: 100
+  ) {
+    id
+    hotel_id
+    start_date
+    end_date
+    is_checked_in
+    price
+  }
+}
+
+🔁 Check in to hotel
+
+mutation {
+  checkIn(id: 1) {
+    id
+    is_checked_in
+    hotel_id
+    start_date
+    end_date
+    price
+  }
+}
+
+❌ Cancel a booking
+
+mutation {
+  cancelBooking(id: 1)
+}
+
+📅 Get bookings between start–end date
+
+query {
+  getBookingsByDate(
+    start: "2024-06-20T00:00:00.000Z",
+    end: "2024-06-22T23:59:59.999Z"
+  ) {
+    id
+    hotel_id
+    start_date
+    end_date
+    is_checked_in
+    price
+  }
+}
